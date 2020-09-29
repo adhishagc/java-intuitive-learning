@@ -1,18 +1,28 @@
 package ExampleInheritance;
 public abstract class Card{
 
-    protected int cardNumber;
-    protected int cardCSV;
-    protected Account account;
-    protected String brandType;
-    protected int points = 0;
+    private int cardNumber;
+    private int cardCSV;
+    private Account account;
+    private int points;
+
+    public Card(){
+        this.cardNumber = -1;
+        this.cardCSV  = -1;
+        this.account = null;
+        this.points = -1;
+    }
 
     public int getCardNumber() {
         return this.cardNumber;
     }
 
     public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
+        if(this.cardNumber ==-1){
+            this.cardNumber = cardNumber;
+        }else{
+            printMessage("Card number cannot be changed.");
+        }   
     }
 
     public int getCardCSV() {
@@ -20,7 +30,12 @@ public abstract class Card{
     }
 
     public void setCardCSV(int cardCSV) {
-        this.cardCSV = cardCSV;
+        if(this.cardCSV == -1){
+            this.cardCSV = cardCSV;
+        }else{
+            printMessage("Card CSV cannot be changed.");
+        }
+        
     }
 
     public Account getAccount() {
@@ -28,26 +43,36 @@ public abstract class Card{
     }
 
     public void setAccount(Account account) {
-        this.account = account;
+        if(this.account == null){
+            this.account = account;
+        }else{
+            printMessage("Card Account cannot be changed.");
+        }
+        
     }
 
-    public String getBrandType() {
-        return this.brandType;
+    public int getPoints() {
+        return this.points;
     }
 
-    public void setBrandType(String brandType) {
-        this.brandType = brandType;
+    public void setPoints(int points) {
+        this.points = points;
     }
 
-    
 
     public void printMessage(String message){
         System.out.println(message);
     }
 
-    public abstract void makePayment(float amount);
-    protected abstract void setPoints(float amount);
+    public void printMessage(float value){
+        System.out.println(value);
+    }
 
+    public void printMessage(String message, float value){
+        System.out.println(message + " " + value);
+    }
 
+    public abstract void makePayment(float amount,int CSV);
     
+
 }

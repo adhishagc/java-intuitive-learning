@@ -49,7 +49,6 @@ public class Account {
         this.customer = customer;
     }
 
-
     public float getBalance() {
         return this.balance;
     }

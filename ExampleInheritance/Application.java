@@ -11,19 +11,16 @@ public class Application {
         System.out.println(account.toString());
 
         //Create credit card
-        Credit adhishaCard = new Credit(0.8f,account);
+        Credit adhishaCard = new Credit(0.8f,account,765);
         System.out.println(adhishaCard.toString());
 
         //Make a payment
-        adhishaCard.makePayment(5000);
+        adhishaCard.makePayment(5000,765);
         System.out.println(adhishaCard.toString());
 
         //Exceed Payment
-        adhishaCard.makePayment(135000);
+        adhishaCard.makePayment(135000,765);
         System.out.println(adhishaCard.toString());
-
-    
-
 
     }
 }
