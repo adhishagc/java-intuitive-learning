@@ -1,1 +1,1 @@
-# java-intuitive-learning
+# java-intuitive-learning (NOT FOR EXAM PURPOSES)
